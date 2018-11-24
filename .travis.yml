@@ -7,4 +7,3 @@ before_install:
 
 script: 
   - docker run shbehna/docker-react npm run test -- --coverage
-  
