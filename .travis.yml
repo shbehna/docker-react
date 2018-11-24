@@ -6,11 +6,12 @@ before_install:
   - docker build -t shbehna/docker-react -f Dockerfile.dev .
 
 script: 
-  - docker run shbehna/docker-react npm run test -- --coverage --no-watchman
+  - docker run shbehna/docker-react npm run test -- --coverage --passWithNoTests
 
 deploy: 
   provider: elasticbeanstalk
   region: "us-east-1"
   app: "docker-react"
   env: "DockerReact-env"
-  bucket_name: 
+  bucket_name: "elasticbeanstalk-us-east-1-124552474508"
+  bucket_path: "docker-react"
